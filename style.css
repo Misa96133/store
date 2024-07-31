@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/*共通のもの*/
+html {
+    font-size: 100%;
+}
+.wrapper{
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+img{
+    width: 100%;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+/*ham menu */
+
+#navi {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    color: #fff;
+    padding: 36px 50px;
+    transition: all 0.5s;
+    z-index: 20;
+    opacity: 0;
+}
+#navi a{
+    color: #fff;
+}
+#navi li{
+    margin-bottom: 14px;
+}
+.open #navi{
+    left: 0;
+    opacity: 1;
+}
+.toggle-btn{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 20;
+}
+.toggle-btn span{
+    display: inline;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition-duration: all 0.5s;
+}
+.toggle-btn span:nth-child(1){
+    top: 10px;
+}
+.toggle-btn span:nth-child(2){
+    bottom: 10px;
+}
+.open .toggle-btn span {
+    background-color: #fff;
+}
+
+.open .toggle-btn span:nth-child(1){
+    transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle-btn span:nth-child(2){
+    transform: translateY(-10px) rotate(+315deg);
+}
+#mask{
+    display: none;
+    transition: all 0.5s;
+}
+.opne #mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+}
+/* ============ */
+
+
+
+#top {
+    padding-top: 80px;
+    padding-bottom: 160px;
+}
+
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.product-list img {
+    max-width: 100%;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+.product-list p {
+    font-size: 0.75rem;
+}
+
+.link-text {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.parination li{
+    padding: 0 20px;
+}
+
+
+
+/*footer*/
+#footer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+#footer .menu{
+    display: flex;
+}
+#footer .menu li{
+    font-size: 0.75rem;
+    margin-right: 30px;
+}
+#footer .copyright{
+    font-size: 0.625rem;
+}
