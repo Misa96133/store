@@ -4,13 +4,41 @@
 html {
     font-size: 100%;
 }
+body{
+    color: #333;
+    font-size: 0.875rem;
+    min-height: 100vh;
+    position: relative;
+}
+a{
+    color: #333;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+a:hover{
+    opacity: 0.7;
+}
+img{
+    max-width: 100%;
+}
+li{
+    list-style: none;
+}
 .wrapper{
     width: 100%;
     max-width: 1360px;
     margin: 0 auto;
     padding: 0 40px;
 }
-
+.content{
+    padding-top: 120px;
+    margin-bottom: 160px;
+}
+.page-title{
+    font-size: 0.875rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
 img{
     width: 100%;
 }
@@ -31,7 +59,7 @@ img{
 
 /*ham menu */
 
-#navi {
+nav {
     position: fixed;
     top: 0;
     left: -300px;
@@ -42,17 +70,17 @@ img{
     z-index: 20;
     opacity: 0;
 }
-#navi a{
-    color: #fff;
-}
-#navi li{
-    margin-bottom: 14px;
-}
-.open #navi{
+.active nav{
     left: 0;
     opacity: 1;
 }
-.toggle-btn{
+nav a{
+    color: #fff;
+}
+nav li{
+    margin-bottom: 14px;
+}
+.ham-menu {
     width: 30px;
     height: 30px;
     position: relative;
@@ -60,8 +88,8 @@ img{
     cursor: pointer;
     z-index: 20;
 }
-.toggle-btn span{
-    display: inline;
+.ham-menu span{
+    display: block;
     position: absolute;
     width: 30px;
     height: 2px;
@@ -69,27 +97,27 @@ img{
     border-radius: 4px;
     transition-duration: all 0.5s;
 }
-.toggle-btn span:nth-child(1){
+.ham-menu span:nth-child(1){
     top: 10px;
 }
-.toggle-btn span:nth-child(2){
+.ham-menu span:nth-child(2){
     bottom: 10px;
 }
-.open .toggle-btn span {
+.ham-menu span.active  {
     background-color: #fff;
 }
 
-.open .toggle-btn span:nth-child(1){
+.ham-menu span.active:nth-child(1){
     transform: translateY(10px) rotate(-315deg);
 }
-.open .toggle-btn span:nth-child(2){
+.ham-menu span.oactivepen:nth-child(2){
     transform: translateY(-10px) rotate(+315deg);
 }
 #mask{
     display: none;
     transition: all 0.5s;
 }
-.opne #mask{
+.active #mask{
     display: block;
     position: fixed;
     top: 0;
@@ -137,12 +165,78 @@ img{
     justify-content: center;
     margin-top: 40px;
 }
-.parination li{
+.pagination li{
     padding: 0 20px;
 }
 
 
+/*item*/
+#item{
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.item-text{
+    width: 42%;
+}
 
+/*item.html*/
+#item .item-text p{
+    margin-bottom: 30px;
+    text-align: justify;
+}
+#item .item-text dl{
+    display: flex;
+    flex-wrap: wrap;
+}
+#item .item-text dt{
+    width: 30%;
+    font-weight: normal;
+}
+#item .item-text dd{
+    width: 70%;
+}
+#item .item-img{
+    width: 50%;
+}
+
+/*about*/
+#about p {
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+/*company*/
+#company dl{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+#company dt{
+    width: 30%;
+    font-weight: normal;
+    border-bottom: solid 1px #dcdbdb;
+    padding: 20px 10px;
+}
+#company dd{
+    width: 70%;
+    border-bottom: solid 1px #dcdbdb;
+    padding: 20px 10px;
+}
+#company dt:last-of-type{
+    border-bottom: none;
+}
+#company dd:last-of-type{
+    border-bottom: none;
+}
+#company .map{
+    filter: grayscale(1);
+}
+#comapny .map iframe{
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
 /*footer*/
 #footer{
     display: flex;
